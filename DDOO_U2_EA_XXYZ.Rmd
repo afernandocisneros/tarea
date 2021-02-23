@@ -1,0 +1,166 @@
+---
+documentclass: report
+
+toc: true
+header-includes:
+  \usepackage[spanish]{babel}
+  \renewcommand{\contentsname}{Índice}
+  \renewcommand\spanishtablename{Tabla}
+
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: no
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    includes:
+       before_body: Portada.tex
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readxl")
+library("reticulate")
+library("DT")
+library("rio")
+```
+
+\newpage
+
+## Introducción
+
+Machine Learning (ML) es una disciplina científica del ámbito de la inteligencia artificial que desarrolla sistemas basados en algoritmos que aprenden automáticamente a tráves del análisis de datos. Actualmente el campo de ML está tomando cada vez mayor relevancia debido al aumento exponencial de información accesible al investigador. En el campo de la ciencias naturales, específicamente en ciencia de los materiales esta información es generada mediante experimentos o cálculos computacionales. Desde hace algunos años existen bases de datos que contienen información sobre algunas de las propiedades de materiales obtenidas principalmente por cálculos cuánticos. Por ejemplo, *Aflow* cuenta en este momento con más de 3 millones de materiales catalogados mientras que *Materials Project* cuenta con casi 2 millones de materiales. 
+
+Por lo tanto, en este proyecto se propone desarrollar un software capaz de diseñar nuevos materiales usando técnicas de ML. Los modelos serán alimentados con la información almacenada en las diferentes bases de datos. La correcta selección de características o propiedades resulta ser un paso crucial al desarrollar algortimos eficientes de ML con un alto poder predictivo. En cuanto a la aplicación de ML en el área de ciencia de materiales, los siguientes datos han demostrado ser determinantes en el diseño de nuevos materiales.
+
+* Energía: Calculada mediante programas de estructura electrónica.
+* Energía por átomo: Energía normalizada por átomo en la celda unitaria.
+* Volumen: Volumen final del material.
+* Densidad electrónica: Disposición de los electrones en el espacio tridimensional.
+* Elementos: Arreglo de los elementos en el material.
+* Estructural cristalina: Disposición geométrica de los átomos dentro de la celda unitaria.
+* Cargas atómicas: Carga parcial de cada átomo.
+* Densidad de Estados, Estructura de bandas y *band gap*: Propiedades electrónicas de los materiales.
+* Momento magnético.
+* Propiedades termodinámicas y elásticas.
+
+Se espera que la aplicación pueda leer archivos en formato txt, csv y json y muestre los resultados en formato texto como gráfico. 
+
+
+## Entrevista
+
+La siguiente entrevista fue realizada al Dr. Andrés Garay Tapia del Centro de Investigación en Materiales Avanzados (CIMAV) Unidad Monterrey.
+
+1. ¿Cuál es el problema a resolver?
+
+Desarrollar un software que implemente modelos de Machine Learning de la categoría del Aprendizaje No Supervisado para diseñar nuevos materiales empleados como cátodos en baterias de ion litio. El entrenamiento del modelo se realizará utilizando datos sobre las propiedades magnéticas, termodinámicas y especialmente sobre las electrónicas, tales como la densidad electrónica y las cargas atómicas. 
+
+
+
+2. ¿Qué información va a ser procesada? 
+
+Archivos txt, csv y json provenientes de las bases de datos que contengan información sobre propiedades de los materiales de interés. 
+
+
+
+3. ¿Deben guardarse los datos por algún periodo de tiempo?
+
+Si, el cual estará en función de la capacidad de almacenamiento de la información.
+
+
+
+4. ¿Bajo que sistema operativo debe funcionar el software?
+
+De preferencia en sistemas GNU/Linux.
+
+
+
+5. ¿Existen restricciones de la velocidad de ejecución, tiempo de respuesta o rendimiento?
+
+De momento no, mientras el software sea capaz de hacer predicciones coherentes el tiempo no es factor.
+
+
+
+6. ¿La aplicación puede integrarse a otros sistemas existentes?
+
+Si, a nuestra base de datos donde esta almacenada la información sobre los estudios que hemos realizado recientemente.
+
+
+
+7. ¿Se requiere alguna documentación?
+
+Si, un manual de usuario.
+
+
+8. ¿Cómo se distribuirá el software?
+
+Como software libre
+
+
+9. ¿Existen requisitos especiales sobre licenciamiento?
+
+El sistema se regirá bajo las reglas de las licencias generales públicas (GNU), es decir será gratuito, código abierto en el que cualquiera podrá cambiar el software, sin patentes y sin garantías.
+
+
+10. ¿Cuántos análisis se analizarán al día?
+
+En promedio se espera que se realicen 50 análisis.
+
+
+
+11. ¿Qué funcionalidades se desea que realice la aplicación?
+
+Principalmente la aplicación de modelos de Machine Learning a un conjunto de datos y la posterior visualización de los resultados de forma gráfica.
+
+
+
+12. ¿Quiénes utilizarán el software desarrollado?
+
+Este sistema estará destinado a Profesores y estudiantes con conocimientos en química, ciencia de materiales, estadística y probabilidad.
+
+
+13. ¿Cuál es el nivel de habilidad de cada tipo de usuario?
+
+Los usuarios tendrán que tener conocimientos básicos en las áreas de estadística y probabilidad para obtner el mayor aprovechamiento de la aplicación.
+
+
+
+14. ¿Cómo valoraría que la solución ha tenido éxito?
+
+Mientras que la aplicación sea capaz de reproducir resultados ya reportados con anterioridad indicará que es un sistema confiable para ser usado en la predicción de nuevos materiales o propiedades.
+
+
+## Especificación de Requerimientos
+
+
+
+
+### Funcionales
+
+### No Funcionales
+
+
+
+
+## Fases de Estandarización
+
+
+
+## Restricciones
+
+
+
+
+## Modelo de desarrollo de software
+
+```{r, echo=FALSE, fig.cap="Captura de pantalla de los datos recabados en el estado de Guanajuato por el INEGI.", out.width = '100%'}
+knitr::include_graphics("/home/devnull/Documentos/UnADM/Materias/2semestre/bloque1/estadistica/u2/act2/captura.png")
+```
+
+
+
+## Bibliografía
+
++ Universidad Abierta y a Distancia de México (20 Febrero 2021). Requerimientos para el análisis del diseño orientado a objetos. Recuperado de: https://campus.unadmexico.mx/.
