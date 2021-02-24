@@ -135,9 +135,13 @@ Mientras que la aplicación sea capaz de reproducir resultados ya reportados con
 ## Especificación de Requerimientos
 
 
-
-
 ### Funcionales
+
+* Debe existir por lo menos un archivo TXT, CSV o JSON en la máquina donde opera el sistema para ejecutar la aplicación.
+* Los datos deben poder ser analizados con un modelo de Machine Learning elegido por el usuario.
+* Una vez que los datos han sido analizados deberán guardarse en un archivo TXT y en caso de generarse gráficas guardarse como imagen JPG.
+* Mostrar en panatalla los resultados numéricos y las gráficas generadas.
+* El usuario puede ingresar su propio algoritmo de algún modelo de Machine Learning para tratar sus propios datos.
 
 ### No Funcionales
 
